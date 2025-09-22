@@ -12,19 +12,24 @@ class Book
     private String author;
     //Field for the title of the book
     private String title;
+    //Field for the amount of pages of the book
+    private int pages;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle)
+    public Book(String bookAuthor, String bookTitle, int bookPages)
     {
         author = bookAuthor;
         title = bookTitle;
+        pages = bookPages;
     }
 
     /**
      * This method returns the author of the book as a String.
+     * 
+     * This method satisfies Problem 2.83
      */
     public String getAuthor() {
         return author;
@@ -32,6 +37,8 @@ class Book
     
     /**
      * This method returns the title of the book as a String.
+     * 
+     * This method satisfies Problem 2.83
      */
     public String getTitle() {
         return title;
@@ -40,6 +47,8 @@ class Book
     /**
      * This method prints the value from the author field to the terminal
      * window.
+     * 
+     * This method satisfies Problem 2.84
      */
     public void printAuthor() {
         System.out.println("Book Author: " + author);
@@ -48,8 +57,19 @@ class Book
     /**
      * This method prints the value from the title field to the terminal
      * window.
+     * 
+     * This method satisfies Problem 2.84
      */
     public void printTitle() {
         System.out.println("Book Title: " + title);
+    }
+    
+    /**
+     * This method returns the number of pages of the book as an int.
+     * 
+     * This method satisfies Problem 2.85
+     */
+    public int getPages() {
+        return pages;
     }
 }
