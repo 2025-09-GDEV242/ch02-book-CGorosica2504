@@ -36,4 +36,20 @@ class Book
     public String getTitle() {
         return title;
     }
+    
+    /**
+     * This method prints the value from the author field to the terminal
+     * window.
+     */
+    public void printAuthor() {
+        System.out.println("Book Author: " + author);
+    }
+    
+    /**
+     * This method prints the value from the title field to the terminal
+     * window.
+     */
+    public void printTitle() {
+        System.out.println("Book Title: " + title);
+    }
 }
