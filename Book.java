@@ -80,12 +80,23 @@ class Book
      * This method prints all of the book's details from the author, title,
      * and pages fields.
      * 
-     * This method satisfies Problem 2.87
+     * This method satisfies Problem 2.87 and Problem 2.89
      */
     public void printDetails() {
         System.out.println("Book Title: " + title
                         + "\nBook Author: " + author
                         + "\nBook Page Amount: " + pages + " pages");
+        
+        /**
+         * Conditional statement to decide how to print the library reference
+         * number print depending on whether or not a value has been set to 
+         * the refNumber field.
+         */
+        if (refNumber.length() > 0) {
+            System.out.println("Library Reference Number: " + refNumber);
+        } else {
+            System.out.println("ZZZ");
+        }
     }
     
     /**
