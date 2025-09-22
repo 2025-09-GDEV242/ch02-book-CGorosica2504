@@ -72,4 +72,16 @@ class Book
     public int getPages() {
         return pages;
     }
+    
+    /**
+     * This method prints all of the book's details from the author, title,
+     * and pages fields.
+     * 
+     * This method satisfies Problem 2.87
+     */
+    public void printDetails() {
+        System.out.println("Book Title: " + title
+                        + "\nBook Author: " + author
+                        + "\nBook Page Amount: " + pages + " pages");
+    }
 }
