@@ -40,6 +40,10 @@ class Book
     }
 
     /**
+     * ACCESSOR METHODS
+     */
+    
+    /**
      * This method returns the author of the book as a String.
      * 
      * This method satisfies Problem 2.83
@@ -56,6 +60,77 @@ class Book
     public String getTitle() {
         return title;
     }
+    
+    /**
+     * This method returns the number of pages of the book as an int.
+     * 
+     * This method satisfies Problem 2.85
+     */
+    public int getPages() {
+        return pages;
+    }
+    
+    /**
+     * This method returns the reference number of the book as a String.
+     * 
+     * This method satisfies Problem 2.88
+     */
+    public String getRefNumber() {
+        return refNumber;
+    }
+    
+    /**
+     * This method returns the amount of times the book has been borrowed.
+     * 
+     * This method satisfies Problem 2.91
+     */
+    public int getBorrowed() {
+        return borrowed;
+    }
+    
+    /**
+     * This method checks whether or not a book is a course text.
+     * 
+     * This method satisfies Problem 2.92
+     */
+    
+    public boolean isCourseText() {
+        return courseText;
+    }
+    
+    /**
+     * MUTATOR METHODS
+     */
+    
+    /**
+     * This methods set a new String value for the refNumber field
+     * 
+     * This method performs a check to make sure that the new value for the
+     * refNumber field has at least 3 characters or more.
+     * 
+     * This method satisfies Problem 2.88 and Problem 2.90
+     */
+    public void setRefNumber(String ref) {
+        if (ref.length() > 2) {
+            refNumber = ref;
+        } else {
+            System.out.println("[ERROR] The library reference number"
+            + " must be at least three characters or more.");
+        }
+    }
+    
+     /**
+     * This method updates the borrowed field by 1 each time it is called.
+     * 
+     * This method satisfies Problem 2.91
+     */
+    public void borrow() {
+        borrowed++;
+    }
+    
+    /**
+     * REPORTING METHODS
+     */
     
     /**
      * This method prints the value from the author field to the terminal
@@ -75,15 +150,6 @@ class Book
      */
     public void printTitle() {
         System.out.println("Book Title: " + title);
-    }
-    
-    /**
-     * This method returns the number of pages of the book as an int.
-     * 
-     * This method satisfies Problem 2.85
-     */
-    public int getPages() {
-        return pages;
     }
     
     /**
@@ -124,59 +190,5 @@ class Book
         } else {
             System.out.println("This book is not a course text.");
         }
-    }
-    
-    /**
-     * This methods set a new String value for the refNumber field
-     * 
-     * This method performs a check to make sure that the new value for the
-     * refNumber field has at least 3 characters or more.
-     * 
-     * This method satisfies Problem 2.88 and Problem 2.90
-     */
-    public void setRefNumber(String ref) {
-        if (ref.length() > 2) {
-            refNumber = ref;
-        } else {
-            System.out.println("[ERROR] The library reference number"
-            + " must be at least three characters or more.");
-        }
-    }
-    
-    /**
-     * This method returns the reference number of the book as a String.
-     * 
-     * This method satisfies Problem 2.88
-     */
-    public String getRefNumber() {
-        return refNumber;
-    }
-    
-    /**
-     * This method updates the borrowed field by 1 each time it is called.
-     * 
-     * This method satisfies Problem 2.91
-     */
-    public void borrow() {
-        borrowed++;
-    }
-    
-    /**
-     * This method returns the amount of times the book has been borrowed.
-     * 
-     * This method satisfies Problem 2.91
-     */
-    public int getBorrowed() {
-        return borrowed;
-    }
-    
-    /**
-     * This method checks whether or not a book is a course text.
-     * 
-     * This method satisfies Problem 2.92
-     */
-    
-    public boolean isCourseText() {
-        return courseText;
     }
 }
