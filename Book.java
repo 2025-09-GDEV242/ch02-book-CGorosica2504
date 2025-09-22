@@ -14,6 +14,8 @@ class Book
     private String title;
     //Field for the amount of pages of the book
     private int pages;
+    //Field for the library reference number of the book
+    private String refNumber;
 
     /**
      * Set the author and title fields when this object
@@ -24,6 +26,7 @@ class Book
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
+        refNumber = "";
     }
 
     /**
@@ -83,5 +86,21 @@ class Book
         System.out.println("Book Title: " + title
                         + "\nBook Author: " + author
                         + "\nBook Page Amount: " + pages + " pages");
+    }
+    
+    /**
+     * This methods set a new String value for the refNumber field
+     * 
+     * This method satisfies Problem 2.88
+     */
+    public void setRefNumber(String ref) {
+        refNumber = ref;
+    }
+    
+    /**
+     * This method returns the reference number of the book as a String.
+     */
+    public String getRefNumber() {
+        return refNumber;
     }
 }
