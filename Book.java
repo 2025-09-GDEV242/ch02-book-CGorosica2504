@@ -1,5 +1,8 @@
 /**
- * A class that maintains information on a book.
+ * A class that maintains information on a book's title, author, page amount,
+ * library reference number, how many times it has been borrowed, and
+ * whether or not it is a course text.
+ * 
  * This might form part of a larger application such
  * as a library system, for instance.
  *
@@ -18,18 +21,22 @@ class Book
     private String refNumber;
     //Field for the amount of times the book has been borrowed
     private int borrowed;
+    //Field for the boolean value for whether or not the book is a course text.
+    private final boolean courseText;
 
     /**
-     * Set the author, title, and pages fields when this object 
-     * is constructed.
+     * Set the author, title, pages, and courseText fields for this object's 
+     * constructor.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages,
+                boolean isCourseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
         borrowed = 0;
+        courseText = isCourseText;
     }
 
     /**
@@ -86,7 +93,10 @@ class Book
      * The print for the refNumber field depends on whether or not a value 
      * has been set for it.
      * 
-     * This method satisfies Problem 2.87, Problem 2.89, and Problem 2.91.
+     * The print will also notify whether or not the book is a course text.
+     * 
+     * This method satisfies Problem 2.87, Problem 2.89, Problem 2.91,
+     * and Problem 2.92
      */
     public void printDetails() {
         System.out.println("Book Title: " + title
@@ -107,6 +117,13 @@ class Book
         //Print the amount of times the book has been borrowed.
         System.out.println("This book has been borrowed " + borrowed
                             + " time(s).");
+                            
+        //Print whether or not the book is a course text.
+        if (courseText == true) {
+            System.out.println("This book is a course text.");
+        } else {
+            System.out.println("This book is not a course text.");
+        }
     }
     
     /**
@@ -129,7 +146,7 @@ class Book
     /**
      * This method returns the reference number of the book as a String.
      * 
-     * This method satisfied Problem 2.88
+     * This method satisfies Problem 2.88
      */
     public String getRefNumber() {
         return refNumber;
@@ -151,5 +168,15 @@ class Book
      */
     public int getBorrowed() {
         return borrowed;
+    }
+    
+    /**
+     * This method checks whether or not a book is a course text.
+     * 
+     * This method satisfies Problem 2.92
+     */
+    
+    public boolean isCourseText() {
+        return courseText;
     }
 }
