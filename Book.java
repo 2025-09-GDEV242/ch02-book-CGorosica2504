@@ -16,9 +16,11 @@ class Book
     private int pages;
     //Field for the library reference number of the book
     private String refNumber;
+    //Field for the amount of times the book has been borrowed
+    private int borrowed;
 
     /**
-     * Set the author and title fields when this object
+     * Set the author, title, and pages fields when this object 
      * is constructed.
      */
     public Book(String bookAuthor, String bookTitle, int bookPages)
@@ -27,6 +29,7 @@ class Book
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        borrowed = 0;
     }
 
     /**
@@ -78,12 +81,12 @@ class Book
     
     /**
      * This method prints all of the book's details from the author, title,
-     * and pages fields.
+     * pages, and borrowed fields.
      * 
-     * It also prints a line for the refNumber field whose content depends on
-     * whether or not a value has been set for it.
+     * The print for the refNumber field depends on whether or not a value 
+     * has been set for it.
      * 
-     * This method satisfies Problem 2.87 and Problem 2.89
+     * This method satisfies Problem 2.87, Problem 2.89, and Problem 2.91.
      */
     public void printDetails() {
         System.out.println("Book Title: " + title
@@ -100,6 +103,10 @@ class Book
         } else {
             System.out.println("ZZZ");
         }
+        
+        //Print the amount of times the book has been borrowed.
+        System.out.println("This book has been borrowed " + borrowed
+                            + " time(s).");
     }
     
     /**
@@ -121,8 +128,28 @@ class Book
     
     /**
      * This method returns the reference number of the book as a String.
+     * 
+     * This method satisfied Problem 2.88
      */
     public String getRefNumber() {
         return refNumber;
+    }
+    
+    /**
+     * This method updates the borrowed field by 1 each time it is called.
+     * 
+     * This method satisfies Problem 2.91
+     */
+    public void borrow() {
+        borrowed++;
+    }
+    
+    /**
+     * This method returns the amount of times the book has been borrowed.
+     * 
+     * This method satisfies Problem 2.91
+     */
+    public int getBorrowed() {
+        return borrowed;
     }
 }
