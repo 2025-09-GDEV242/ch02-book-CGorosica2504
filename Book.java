@@ -80,6 +80,9 @@ class Book
      * This method prints all of the book's details from the author, title,
      * and pages fields.
      * 
+     * It also prints a line for the refNumber field whose content depends on
+     * whether or not a value has been set for it.
+     * 
      * This method satisfies Problem 2.87 and Problem 2.89
      */
     public void printDetails() {
@@ -102,10 +105,18 @@ class Book
     /**
      * This methods set a new String value for the refNumber field
      * 
-     * This method satisfies Problem 2.88
+     * This method performs a check to make sure that the new value for the
+     * refNumber field has at least 3 characters or more.
+     * 
+     * This method satisfies Problem 2.88 and Problem 2.90
      */
     public void setRefNumber(String ref) {
-        refNumber = ref;
+        if (ref.length() > 2) {
+            refNumber = ref;
+        } else {
+            System.out.println("[ERROR] The library reference number"
+            + " must be at least three characters or more.");
+        }
     }
     
     /**
